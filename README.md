@@ -1,1 +1,0 @@
-# M.M-MEHMET-KABURAK
