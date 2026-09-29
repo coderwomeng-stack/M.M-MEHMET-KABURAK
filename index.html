@@ -1,190 +1,692 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="van mali müşavir,van mali işler,van">
-    <meta name="description" content="Defter Tutma ve Muhasebe: Şirketin gelir, gider, fatura ve benzeri tüm ticari işlemlerini yasal defterlere kaydeder ve düzenler.">
-    <title>Mehmet Kaburak | Mali Müşavirlik</title>
-    <!-- Font Awesome İkon Kütüphanesi -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* GENEL AYARLAR */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+```
+<meta name="keywords" content="van mali müşavir,van mali işler,van">
+<meta name="description" content="Defter Tutma ve Muhasebe: Şirketin gelir, gider, fatura ve benzeri tüm ticari işlemlerini yasal defterlere kaydeder ve düzenler.">
+
+<title>Mehmet Kaburak | Mali Müşavirlik</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+    /* =========================
+       GENEL AYARLAR
+    ========================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        color: #f5f5f5;
+        min-height: 100vh;
+        overflow-x: hidden;
+
+        /*
+            SATRANÇ ARKA PLAN
+
+            Buradaki URL'yi kendi GitHub
+            görsel bağlantınla değiştirebilirsin.
+
+            Örnek:
+            https://raw.githubusercontent.com/kullanici/repo/main/satranc.jpg
+        */
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(7, 13, 24, 0.94),
+                rgba(13, 22, 38, 0.90)
+            ),
+            url('BURAYA_GITHUB_RAW_BAGLANTISI');
+
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+
+
+    /* =========================
+       ÜST PARÇA
+    ========================= */
+
+    header {
+        position: relative;
+        text-align: center;
+        padding: 75px 20px 45px;
+
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(4, 9, 18, 0.85),
+                rgba(4, 9, 18, 0.35)
+            );
+
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+
+    /* Üstte küçük dekoratif çizgi */
+
+    header::before {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 3px;
+        margin: 0 auto 25px;
+
+        background: linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            transparent
+        );
+
+        border-radius: 50%;
+    }
+
+
+    header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.5rem, 6vw, 4.3rem);
+        font-weight: 700;
+        letter-spacing: 2px;
+
+        background: linear-gradient(
+            135deg,
+            #f8e7a1,
+            #d4af37,
+            #fff3b0
+        );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        margin-bottom: 18px;
+
+        text-shadow:
+            0 5px 25px rgba(212,175,55,0.15);
+    }
+
+
+    header p {
+        max-width: 700px;
+        margin: 0 auto;
+
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        line-height: 1.7;
+
+        color: #d7dce5;
+        letter-spacing: .5px;
+    }
+
+
+    /* =========================
+       ANA ALAN
+    ========================= */
+
+    main {
+        width: min(1050px, 92%);
+        margin: 55px auto 70px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+
+    /* =========================
+       KARTLAR
+    ========================= */
+
+    .section-box {
+        position: relative;
+
+        padding: 38px;
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255,255,255,0.10),
+                rgba(255,255,255,0.035)
+            );
+
+        border: 1px solid rgba(255,255,255,0.13);
+
+        border-radius: 22px;
+
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+
+        box-shadow:
+            0 25px 60px rgba(0,0,0,0.35),
+            inset 0 1px 0 rgba(255,255,255,0.08);
+
+        transition:
+            transform .35s ease,
+            box-shadow .35s ease,
+            border-color .35s ease;
+
+        overflow: hidden;
+    }
+
+
+    /* Kartın üstündeki dekoratif çizgi */
+
+    .section-box::before {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 3px;
+
+        background: linear-gradient(
+            90deg,
+            transparent,
+            #d4af37,
+            transparent
+        );
+
+        opacity: .8;
+    }
+
+
+    .section-box:hover {
+        transform: translateY(-8px);
+
+        border-color: rgba(212,175,55,0.35);
+
+        box-shadow:
+            0 30px 70px rgba(0,0,0,0.45),
+            0 0 30px rgba(212,175,55,0.06);
+    }
+
+
+    /* =========================
+       BAŞLIKLAR
+    ========================= */
+
+    .section-box h2 {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        font-family: 'Playfair Display', serif;
+
+        font-size: 1.65rem;
+
+        color: #e6c75a;
+
+        margin-bottom: 22px;
+    }
+
+
+    .section-box h2::before {
+        content: "";
+        width: 5px;
+        height: 28px;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+            to bottom,
+            #f1d675,
+            #a57d19
+        );
+    }
+
+
+    /* =========================
+       METİNLER
+    ========================= */
+
+    .section-box p {
+        font-size: 1rem;
+        line-height: 1.9;
+        color: #dce1e9;
+    }
+
+
+    /* =========================
+       İLETİŞİM LİSTESİ
+    ========================= */
+
+    .section-box ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+
+    .section-box li {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+
+        padding: 14px;
+
+        border-radius: 12px;
+
+        background: rgba(255,255,255,0.035);
+
+        border: 1px solid rgba(255,255,255,0.06);
+
+        color: #e1e5ec;
+
+        line-height: 1.6;
+
+        transition: .25s ease;
+    }
+
+
+    .section-box li:hover {
+        background: rgba(212,175,55,0.07);
+        border-color: rgba(212,175,55,0.2);
+    }
+
+
+    .section-box li i {
+        min-width: 22px;
+
+        margin-top: 3px;
+
+        color: #d4af37;
+        font-size: 1.1rem;
+    }
+
+
+    .section-box li strong {
+        color: #f0d66b;
+        margin-right: 4px;
+    }
+
+
+    .section-box li a {
+        color: #ffffff;
+        text-decoration: none;
+
+        transition: .2s ease;
+    }
+
+
+    .section-box li a:hover {
+        color: #d4af37;
+    }
+
+
+    /* =========================
+       WHATSAPP
+    ========================= */
+
+    .whatsapp-btn {
+        position: fixed;
+
+        right: 28px;
+        bottom: 28px;
+
+        width: 64px;
+        height: 64px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #25d366;
+        color: #fff;
+
+        font-size: 1.9rem;
+
+        text-decoration: none;
+
+        box-shadow:
+            0 10px 30px rgba(0,0,0,0.4),
+            0 0 0 6px rgba(37,211,102,0.10);
+
+        z-index: 1000;
+
+        transition:
+            transform .3s ease,
+            box-shadow .3s ease;
+    }
+
+
+    .whatsapp-btn:hover {
+        transform: translateY(-5px) scale(1.08);
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,0.45),
+            0 0 0 9px rgba(37,211,102,0.12);
+    }
+
+
+    /* WhatsApp küçük nabız efekti */
+
+    .whatsapp-btn::before {
+        content: "";
+
+        position: absolute;
+
+        width: 100%;
+        height: 100%;
+
+        border-radius: 50%;
+
+        border: 2px solid rgba(37,211,102,0.5);
+
+        animation: whatsappPulse 2s infinite;
+    }
+
+
+    @keyframes whatsappPulse {
+
+        0% {
+            transform: scale(1);
+            opacity: .7;
         }
 
-        /* ARKA PLAN AYARI (GitHub bağlantısı buraya eklendi) */
-        body {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('BURAYA_GITHUB_RAW_BAGLANTISI') no-repeat center center fixed;
-            background-size: cover;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        70% {
+            transform: scale(1.35);
+            opacity: 0;
         }
 
-        /* HEADER */
+        100% {
+            transform: scale(1.35);
+            opacity: 0;
+        }
+
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        text-align: center;
+
+        padding: 28px 20px;
+
+        background: rgba(3,7,14,0.88);
+
+        border-top: 1px solid rgba(255,255,255,0.08);
+
+        color: #9299a6;
+
+        font-size: .88rem;
+    }
+
+
+    footer p {
+        letter-spacing: .3px;
+    }
+
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width: 850px) {
+
+        main {
+            grid-template-columns: 1fr;
+            width: min(700px, 92%);
+        }
+
         header {
-            text-align: center;
-            padding: 40px 20px 20px 20px;
+            padding-top: 55px;
         }
+
+    }
+
+
+    /* =========================
+       MOBİL
+    ========================= */
+
+    @media (max-width: 600px) {
+
+        header {
+            padding: 50px 18px 35px;
+        }
+
 
         header h1 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            color: #f1c40f; /* Mali Müşavirlik için prestijli altın/sarı tonu */
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            color: #dcdde1;
+            font-size: 2.35rem;
             letter-spacing: 1px;
         }
 
-        /* ANA İÇERİK */
+
+        header p {
+            font-size: .95rem;
+        }
+
+
         main {
-            max-width: 900px;
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+            width: 92%;
+            margin: 35px auto 50px;
+            gap: 20px;
+        }
+
+
+        .section-box {
+            padding: 27px 22px;
+            border-radius: 18px;
+        }
+
+
+        .section-box h2 {
+            font-size: 1.4rem;
+        }
+
+
+        .section-box p {
+            font-size: .94rem;
+            line-height: 1.8;
+        }
+
+
+        .section-box li {
+            font-size: .9rem;
+        }
+
+
+        .whatsapp-btn {
+            width: 58px;
+            height: 58px;
+
+            right: 18px;
+            bottom: 18px;
+
+            font-size: 1.7rem;
+        }
+
+
+        footer {
+            padding-bottom: 25px;
+        }
+
+    }
+
+
+    /* =========================
+       KÜÇÜK EKRAN
+    ========================= */
+
+    @media (max-width: 380px) {
+
+        header h1 {
+            font-size: 2rem;
         }
 
         .section-box {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 30px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            padding: 23px 18px;
         }
 
-        .section-box h2 {
-            font-size: 1.5rem;
-            color: #f1c40f;
-            margin-bottom: 15px;
-            border-bottom: 2px solid rgba(241, 196, 15, 0.3);
-            padding-bottom: 8px;
-            display: inline-block;
+        .section-box li {
+            flex-direction: column;
+            gap: 7px;
         }
 
-        .section-box p, .section-box ul {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #ecf0f1;
-        }
+    }
 
-        .section-box ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
+</style>
+```
 
-        .section-box ul li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-box ul li i {
-            color: #f1c40f;
-        }
-
-        /* WP BUTON */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            font-size: 2rem;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            background-color: #20ba5a;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            font-size: 0.9rem;
-            color: #bdc3c7;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* RESPONSİVE */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            .section-box {
-                padding: 20px;
-            }
-        }
-    </style>
 </head>
+
 <body>
 
-    <!--ÜST BÖLÜM-->
-    <header>
-        <h1>Mehmet Kaburak</h1>
-        <p>Doğru hamle, güçlü maliye: İşletmenizin güvenilir rehberi.</p>
-    </header>
+```
+<!-- =========================
+     ÜST BÖLÜM
+========================== -->
 
-    <!-- ANA BÖLÜMLER -->
-    <main>
-        <!-- HAKKIMIZDA ALANI -->
-        <section class="section-box">
-            <h2>Hakkımızda</h2>
-            <p>Mehmet Kaburak Mali Müşavirlik Ofisi olarak, işletmenizin finansal yapısını güçlendirmek, yasal süreçlerinizi güvenle yönetmek ve büyümenize stratejik destek sağlamak amacıyla profesyonel hizmet sunmaktayız.</p>
-        </section>
+<header>
 
-        <!-- İLETİŞİM & ADRES ALANI -->
-        <section class="section-box">
-            <h2>İletişim & Adres</h2>
-            <ul>
-                <!-- ADRES KISMI -->
-                <li><i class="fa-solid fa-location-dot"></i> <strong>Adres:</strong> Şerefiye mah İrfan Baştuğ CAD Yılmazlar iş merkezi kat 5 no.35 İpekyolu Van</li>
-                <!-- TELEFON KISMI -->
-                <li><i class="fa-solid fa-phone"></i> <strong>Telefon:</strong> <a href="tel:+905442017429" style="color: #fff; text-decoration: none;">0544 201 74 29</a></li>
-                <!-- E-POSTA KISMI -->
-                <li><i class="fa-solid fa-envelope"></i> <strong>E-posta:</strong> bilgi@mehmetkaburak.com</li>
-            </ul>
-        </section>
-    </main>
+    <h1>Mehmet Kaburak</h1>
 
-    <!-- WHATSAPP BUTONU  -->
-    <a href="https://wa.me/905442017429?text=Merhaba,%20bilgi%20almak%20istiyorum." class="whatsapp-btn" target="_blank" title="WhatsApp ile İletişime Geçin">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <p>
+        Doğru hamle, güçlü maliye: İşletmenizin güvenilir rehberi.
+    </p>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Mehmet Kaburak Mali Müşavirlik. Tüm Hakları Saklıdır.</p>
-    </footer>
+</header>
+
+
+
+<!-- =========================
+     ANA İÇERİK
+========================== -->
+
+<main>
+
+
+    <!-- HAKKIMIZDA -->
+
+    <section class="section-box">
+
+        <h2>Hakkımızda</h2>
+
+        <p>
+            Mehmet Kaburak Mali Müşavirlik Ofisi olarak,
+            işletmenizin finansal yapısını güçlendirmek,
+            yasal süreçlerinizi güvenle yönetmek ve
+            büyümenize stratejik destek sağlamak amacıyla
+            profesyonel hizmet sunmaktayız.
+        </p>
+
+    </section>
+
+
+
+    <!-- İLETİŞİM -->
+
+    <section class="section-box">
+
+        <h2>İletişim & Adres</h2>
+
+        <ul>
+
+            <li>
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>
+                    <strong>Adres:</strong>
+                    Şerefiye mah İrfan Baştuğ CAD Yılmazlar iş merkezi
+                    kat 5 no.35 İpekyolu Van
+                </span>
+            </li>
+
+
+            <li>
+                <i class="fa-solid fa-phone"></i>
+
+                <span>
+                    <strong>Telefon:</strong>
+
+                    <a href="tel:+905442017429">
+                        0544 201 74 29
+                    </a>
+                </span>
+            </li>
+
+
+            <li>
+                <i class="fa-solid fa-envelope"></i>
+
+                <span>
+                    <strong>E-posta:</strong>
+                    bilgi@mehmetkaburak.com
+                </span>
+            </li>
+
+        </ul>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================
+     WHATSAPP
+========================== -->
+
+<a
+    href="https://wa.me/905442017429?text=Merhaba,%20bilgi%20almak%20istiyorum."
+    class="whatsapp-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="WhatsApp ile İletişime Geçin"
+    aria-label="WhatsApp ile İletişime Geçin">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <p>
+        &copy; 2026 Mehmet Kaburak Mali Müşavirlik.
+        Tüm Hakları Saklıdır.
+    </p>
+
+</footer>
+```
 
 </body>
 </html>
+
