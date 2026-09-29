@@ -7,35 +7,37 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="keywords" content="van mali müşavir, van mali işler, van">
+    <meta name="keywords"
+        content="van mali müşavir, van mali işler, van">
 
     <meta name="description"
-        content="Defter Tutma ve Muhasebe: Şirketin gelir, gider, fatura ve benzeri tüm ticari işlemlerini yasal defterlere kaydeder ve düzenler.">
+        content="Mehmet Kaburak Mali Müşavirlik Ofisi. İşletmenizin finansal yapısını güçlendirmek, yasal süreçlerinizi güvenle yönetmek ve büyümenize stratejik destek sağlamak amacıyla profesyonel hizmet sunmaktayız.">
 
     <title>Mehmet Kaburak | Mali Müşavirlik</title>
 
 
-    <!-- Font Awesome -->
+    <!-- FONT AWESOME -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
     <link rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
 
 
     <style>
 
-        /* =========================================
-           GENEL AYARLAR
-        ========================================= */
+        /* =====================================================
+           GENEL
+        ===================================================== */
 
         * {
             margin: 0;
@@ -53,7 +55,7 @@
 
             font-family: 'Inter', sans-serif;
 
-            color: #ffffff;
+            color: #f4f4f4;
 
             min-height: 100vh;
 
@@ -61,19 +63,17 @@
 
 
             /*
-            ========================================
             SATRANÇ ARKA PLANI
-            ========================================
 
-            arkaplan.jpg dosyası HTML ile
-            aynı klasörde bulunmalıdır.
+            arkaplan.jpg dosyasını
+            index.html ile aynı klasöre koy.
             */
 
             background-image:
 
                 linear-gradient(
-                    rgba(3, 7, 15, 0.78),
-                    rgba(3, 7, 15, 0.88)
+                    rgba(3, 5, 9, 0.76),
+                    rgba(3, 5, 9, 0.91)
                 ),
 
                 url("arkaplan.jpg");
@@ -90,68 +90,346 @@
         }
 
 
-        /* =========================================
-           SAYFANIN GENEL KATMANI
-        ========================================= */
+        /* =====================================================
+           MAT GOLD RENK
+        ===================================================== */
 
-        body::before {
+        :root {
 
-            content: "";
+            --gold: #c6a15b;
 
-            position: fixed;
+            --gold-light: #d8bd82;
 
-            inset: 0;
+            --gold-dark: #98783c;
 
-            pointer-events: none;
+            --dark: #05070b;
 
-            background:
+            --card: rgba(8, 12, 18, 0.78);
 
-                radial-gradient(
-                    circle at 50% 20%,
-                    rgba(212, 175, 55, 0.08),
-                    transparent 35%
-                );
+            --border: rgba(198, 161, 91, 0.25);
 
-            z-index: -1;
+            --text: #e3e6eb;
+
+            --muted: #9ca3ad;
 
         }
 
 
-        /* =========================================
-           HEADER
-        ========================================= */
+        /* =====================================================
+           HEADER / NAVBAR
+        ===================================================== */
 
         header {
 
+            position: sticky;
+
+            top: 0;
+
+            z-index: 2000;
+
+
+            background:
+
+                rgba(3, 5, 9, 0.88);
+
+
+            backdrop-filter: blur(15px);
+
+            -webkit-backdrop-filter: blur(15px);
+
+
+            border-bottom:
+
+                1px solid
+                rgba(198, 161, 91, 0.20);
+
+        }
+
+
+        .navbar {
+
+            width: min(1200px, 92%);
+
+            height: 88px;
+
+            margin: auto;
+
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        /* =====================================================
+           LOGO
+        ===================================================== */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            text-decoration: none;
+
+            color: white;
+
+        }
+
+
+        .logo-symbol {
+
+            width: 52px;
+
+            height: 52px;
+
+            border:
+
+                1px solid
+                var(--gold);
+
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+
+            border-radius: 50%;
+
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+            color: var(--gold-light);
+
+
+            box-shadow:
+
+                inset 0 0 15px
+                rgba(198,161,91,0.08);
+
+        }
+
+
+        .logo-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        .logo-name {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+
+            font-size: 1.15rem;
+
+            letter-spacing: 1.5px;
+
+            color: var(--gold-light);
+
+        }
+
+
+        .logo-subtitle {
+
+            font-size: .63rem;
+
+            letter-spacing: 4px;
+
+            color: #a8a8a8;
+
+            margin-top: 3px;
+
+        }
+
+
+        /* =====================================================
+           MASAÜSTÜ MENÜ
+        ===================================================== */
+
+        .nav-menu {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            list-style: none;
+
+        }
+
+
+        .nav-menu a {
+
+            position: relative;
+
+            display: block;
+
+            padding: 10px 15px;
+
+            color: #d8d8d8;
+
+            text-decoration: none;
+
+            font-size: .88rem;
+
+            transition: .3s ease;
+
+        }
+
+
+        .nav-menu a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 15px;
+
+            right: 15px;
+
+            bottom: 4px;
+
+            height: 1px;
+
+            background: var(--gold);
+
+            transform: scaleX(0);
+
+            transition: .3s ease;
+
+        }
+
+
+        .nav-menu a:hover {
+
+            color: var(--gold-light);
+
+        }
+
+
+        .nav-menu a:hover::after {
+
+            transform: scaleX(1);
+
+        }
+
+
+        /* =====================================================
+           HAMBURGER
+        ===================================================== */
+
+        .menu-toggle {
+
+            display: none;
+
+            width: 48px;
+
+            height: 48px;
+
+            border:
+
+                1px solid
+                var(--border);
+
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,0.03);
+
+
+            cursor: pointer;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 5px;
+
+        }
+
+
+        .menu-toggle span {
+
+            width: 21px;
+
+            height: 2px;
+
+            background: var(--gold-light);
+
+            border-radius: 5px;
+
+            transition: .3s ease;
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height: 590px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
             text-align: center;
 
-            padding: 75px 20px 55px;
+            padding: 70px 20px 80px;
+
 
             background:
 
                 linear-gradient(
                     to bottom,
-                    rgba(0, 0, 0, 0.60),
-                    rgba(0, 0, 0, 0.15)
+                    rgba(0,0,0,0.05),
+                    rgba(0,0,0,0.42)
                 );
-
-            border-bottom: 1px solid
-                rgba(255, 255, 255, 0.08);
 
         }
 
 
-        /* Üst dekoratif çizgi */
+        .hero-content {
 
-        header::before {
+            max-width: 900px;
 
-            content: "";
+        }
 
-            display: block;
 
-            width: 80px;
+        .hero-line {
 
-            height: 3px;
+            width: 85px;
+
+            height: 2px;
 
             margin: 0 auto 25px;
 
@@ -160,164 +438,124 @@
                 linear-gradient(
                     90deg,
                     transparent,
-                    #d4af37,
+                    var(--gold),
                     transparent
                 );
 
-            border-radius: 10px;
-
         }
 
 
-        /* =========================================
-           İSİM
-        ========================================= */
+        .hero h1 {
 
-        header h1 {
+            font-family:
+                'Playfair Display',
+                serif;
 
-            font-family: 'Playfair Display', serif;
 
-            font-size: clamp(
-                2.5rem,
-                7vw,
-                4.5rem
-            );
+            font-size:
+                clamp(2.7rem, 7vw, 5rem);
 
-            font-weight: 700;
+
+            line-height: 1.1;
+
+            color: var(--gold-light);
 
             letter-spacing: 2px;
 
-            margin-bottom: 18px;
-
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    #fff3b0,
-                    #d4af37,
-                    #f8e7a1
-                );
-
-            -webkit-background-clip: text;
-
-            -webkit-text-fill-color: transparent;
-
 
             text-shadow:
+
                 0 5px 30px
-                rgba(212, 175, 55, 0.20);
+                rgba(0,0,0,0.7);
 
         }
 
 
-        /* =========================================
-           SLOGAN
-        ========================================= */
+        .hero p {
 
-        header p {
+            max-width: 700px;
 
-            max-width: 750px;
+            margin: 25px auto 0;
 
-            margin: auto;
+            font-size:
+                clamp(1rem, 2vw, 1.25rem);
 
-            font-size: clamp(
-                1rem,
-                2vw,
-                1.2rem
-            );
 
             line-height: 1.8;
 
-            color: #e2e5eb;
-
-            letter-spacing: 0.5px;
+            color: #d5d8de;
 
         }
 
 
-        /* =========================================
-           ANA ALAN
-        ========================================= */
+        /* =====================================================
+           ANA İÇERİK
+        ===================================================== */
 
         main {
 
-            width: min(
-                1050px,
-                92%
-            );
+            width: min(1050px, 92%);
 
-            margin: 55px auto 75px;
-
-
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 30px;
+            margin: 0 auto 80px;
 
         }
 
 
-        /* =========================================
-           KARTLAR
-        ========================================= */
+        .section {
+
+            margin-bottom: 35px;
+
+            scroll-margin-top: 115px;
+
+        }
+
+
+        /* =====================================================
+           KART
+        ===================================================== */
 
         .section-box {
 
             position: relative;
 
-            padding: 38px;
+            padding: 40px;
 
 
             background:
 
                 linear-gradient(
                     145deg,
-                    rgba(20, 27, 40, 0.80),
-                    rgba(8, 13, 23, 0.72)
+                    rgba(12,17,25,0.88),
+                    rgba(4,8,14,0.82)
                 );
 
 
             border:
 
                 1px solid
-                rgba(255, 255, 255, 0.12);
+                rgba(198,161,91,0.20);
 
 
-            border-radius: 22px;
+            border-radius: 20px;
 
 
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
 
-            -webkit-backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(12px);
 
 
             box-shadow:
 
                 0 25px 60px
-                rgba(0, 0, 0, 0.45),
-
-                inset 0 1px 0
-                rgba(255, 255, 255, 0.07);
-
-
-            transition:
-
-                transform 0.35s ease,
-
-                box-shadow 0.35s ease,
-
-                border-color 0.35s ease;
+                rgba(0,0,0,0.42);
 
 
             overflow: hidden;
 
+            transition: .35s ease;
+
         }
 
-
-        /* Kartların üstündeki altın çizgi */
 
         .section-box::before {
 
@@ -331,7 +569,7 @@
 
             width: 100%;
 
-            height: 3px;
+            height: 2px;
 
 
             background:
@@ -339,73 +577,48 @@
                 linear-gradient(
                     90deg,
                     transparent,
-                    #d4af37,
+                    var(--gold),
                     transparent
                 );
 
         }
 
 
-        /* Hover efekti */
-
         .section-box:hover {
-
-            transform:
-                translateY(-8px);
-
 
             border-color:
 
-                rgba(212, 175, 55, 0.35);
+                rgba(198,161,91,0.40);
 
 
-            box-shadow:
-
-                0 30px 70px
-                rgba(0, 0, 0, 0.55),
-
-                0 0 35px
-                rgba(212, 175, 55, 0.07);
+            transform:
+                translateY(-4px);
 
         }
 
 
-        /* =========================================
-           KART BAŞLIKLARI
-        ========================================= */
+        /* =====================================================
+           BAŞLIK
+        ===================================================== */
 
-        .section-box h2 {
+        .section-title {
 
             display: flex;
 
             align-items: center;
 
-            gap: 12px;
+            gap: 14px;
 
-
-            font-family:
-                'Playfair Display',
-                serif;
-
-
-            font-size: 1.65rem;
-
-            color: #e6c75a;
-
-            margin-bottom: 22px;
+            margin-bottom: 28px;
 
         }
 
 
-        /* Başlığın solundaki altın çubuk */
-
-        .section-box h2::before {
-
-            content: "";
+        .title-bar {
 
             width: 5px;
 
-            height: 28px;
+            height: 34px;
 
             border-radius: 10px;
 
@@ -414,33 +627,162 @@
 
                 linear-gradient(
                     to bottom,
-                    #f5df86,
-                    #a57d19
+                    var(--gold-light),
+                    var(--gold-dark)
                 );
 
         }
 
 
-        /* =========================================
-           HAKKIMIZDA METNİ
-        ========================================= */
+        .section-title h2 {
 
-        .section-box p {
+            font-family:
+                'Playfair Display',
+                serif;
 
-            font-size: 1rem;
 
-            line-height: 1.9;
+            font-size:
+                clamp(1.5rem, 4vw, 2rem);
 
-            color: #dce1e9;
+
+            color: var(--gold-light);
 
         }
 
 
-        /* =========================================
-           İLETİŞİM LİSTESİ
-        ========================================= */
+        /* =====================================================
+           DUYURULAR
+        ===================================================== */
 
-        .section-box ul {
+        .announcement-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .announcement {
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+
+            background:
+
+                rgba(255,255,255,0.025);
+
+
+            border:
+
+                1px solid
+                rgba(255,255,255,0.08);
+
+
+            transition: .3s ease;
+
+        }
+
+
+        .announcement:hover {
+
+            background:
+
+                rgba(198,161,91,0.055);
+
+
+            border-color:
+
+                rgba(198,161,91,0.28);
+
+
+            transform:
+                translateY(-5px);
+
+        }
+
+
+        .announcement-icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+
+            border-radius: 10px;
+
+
+            color: var(--gold-light);
+
+            border:
+
+                1px solid
+                var(--border);
+
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .announcement h3 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+
+            color: #e5e5e5;
+
+            font-size: 1.15rem;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .announcement p {
+
+            color: var(--muted);
+
+            font-size: .9rem;
+
+            line-height: 1.7;
+
+        }
+
+
+        .announcement-date {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            color: var(--gold);
+
+            font-size: .75rem;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =====================================================
+           İLETİŞİM
+        ===================================================== */
+
+        .contact-list {
 
             list-style: none;
 
@@ -448,120 +790,147 @@
 
             flex-direction: column;
 
-            gap: 17px;
+            gap: 13px;
 
         }
 
 
-        .section-box li {
+        .contact-item {
 
             display: flex;
 
             align-items: flex-start;
 
-            gap: 15px;
+            gap: 18px;
 
-
-            padding: 15px;
-
-
-            border-radius: 13px;
+            padding: 18px;
 
 
             background:
 
-                rgba(255, 255, 255, 0.035);
+                rgba(255,255,255,0.025);
 
 
             border:
 
                 1px solid
-                rgba(255, 255, 255, 0.06);
+                rgba(255,255,255,0.06);
 
 
-            color: #e1e5ec;
+            border-radius: 13px;
 
-            line-height: 1.6;
-
-
-            transition: 0.25s ease;
+            transition: .3s ease;
 
         }
 
 
-        .section-box li:hover {
+        .contact-item:hover {
 
             background:
 
-                rgba(212, 175, 55, 0.07);
+                rgba(198,161,91,0.05);
 
 
             border-color:
 
-                rgba(212, 175, 55, 0.20);
+                rgba(198,161,91,0.22);
 
         }
 
 
-        /* İkonlar */
+        .contact-icon {
 
-        .section-box li i {
+            min-width: 45px;
 
-            min-width: 22px;
+            height: 45px;
 
-            margin-top: 3px;
+            display: flex;
 
-            color: #d4af37;
+            align-items: center;
 
-            font-size: 1.1rem;
+            justify-content: center;
+
+
+            border-radius: 10px;
+
+
+            border:
+
+                1px solid
+                var(--border);
+
+
+            color: var(--gold-light);
+
+            font-size: 1rem;
 
         }
 
 
-        /* Başlıklar */
+        .contact-text {
 
-        .section-box li strong {
+            line-height: 1.7;
 
-            color: #f0d66b;
-
-            margin-right: 4px;
+            color: #d5d8de;
 
         }
 
 
-        /* Telefon */
+        .contact-text strong {
 
-        .section-box li a {
+            display: block;
 
-            color: #ffffff;
+            color: var(--gold-light);
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .contact-text a {
+
+            color: #d5d8de;
 
             text-decoration: none;
 
-            transition: 0.2s ease;
+            transition: .25s ease;
 
         }
 
 
-        .section-box li a:hover {
+        .contact-text a:hover {
 
-            color: #d4af37;
+            color: var(--gold-light);
 
         }
 
 
-        /* =========================================
-           WHATSAPP BUTONU
-        ========================================= */
+        /* =====================================================
+           HAKKIMIZDA
+        ===================================================== */
+
+        .about-text {
+
+            color: #d5d8de;
+
+            font-size: 1rem;
+
+            line-height: 2;
+
+        }
+
+
+        /* =====================================================
+           WHATSAPP
+        ===================================================== */
 
         .whatsapp-btn {
 
             position: fixed;
 
-
             right: 28px;
 
             bottom: 28px;
-
 
             width: 64px;
 
@@ -580,32 +949,27 @@
 
             background: #25d366;
 
-            color: #ffffff;
+            color: white;
 
 
             font-size: 1.9rem;
 
-
             text-decoration: none;
+
+
+            z-index: 3000;
 
 
             box-shadow:
 
-                0 10px 30px
-                rgba(0, 0, 0, 0.45),
+                0 10px 35px
+                rgba(0,0,0,.5),
 
                 0 0 0 6px
-                rgba(37, 211, 102, 0.10);
+                rgba(37,211,102,.08);
 
 
-            z-index: 1000;
-
-
-            transition:
-
-                transform 0.3s ease,
-
-                box-shadow 0.3s ease;
+            transition: .3s ease;
 
         }
 
@@ -616,138 +980,56 @@
                 translateY(-5px)
                 scale(1.08);
 
-
-            box-shadow:
-
-                0 15px 35px
-                rgba(0, 0, 0, 0.50),
-
-                0 0 0 9px
-                rgba(37, 211, 102, 0.12);
-
         }
 
 
-        /* WhatsApp animasyon */
-
-        .whatsapp-btn::before {
-
-            content: "";
-
-            position: absolute;
-
-            width: 100%;
-
-            height: 100%;
-
-            border-radius: 50%;
-
-            border:
-                2px solid
-                rgba(37, 211, 102, 0.5);
-
-            animation:
-                whatsappPulse 2s infinite;
-
-        }
-
-
-        @keyframes whatsappPulse {
-
-            0% {
-
-                transform: scale(1);
-
-                opacity: 0.7;
-
-            }
-
-            70% {
-
-                transform: scale(1.35);
-
-                opacity: 0;
-
-            }
-
-            100% {
-
-                transform: scale(1.35);
-
-                opacity: 0;
-
-            }
-
-        }
-
-
-        /* =========================================
+        /* =====================================================
            FOOTER
-        ========================================= */
+        ===================================================== */
 
         footer {
 
             text-align: center;
 
-            padding: 28px 20px;
-
+            padding: 30px 20px;
 
             background:
-
-                rgba(2, 5, 10, 0.88);
+                rgba(2,4,8,.92);
 
 
             border-top:
 
                 1px solid
-                rgba(255, 255, 255, 0.08);
+                rgba(198,161,91,.15);
 
 
-            color: #9299a6;
+            color: #8f959f;
 
-            font-size: 0.88rem;
-
-        }
-
-
-        footer p {
-
-            letter-spacing: 0.3px;
+            font-size: .85rem;
 
         }
 
 
-        /* =========================================
+        /* =====================================================
            TABLET
-        ========================================= */
+        ===================================================== */
 
         @media (max-width: 850px) {
 
-            main {
+            .announcement-grid {
 
                 grid-template-columns: 1fr;
-
-                width: min(
-                    700px,
-                    92%
-                );
-
-            }
-
-            header {
-
-                padding-top: 55px;
 
             }
 
         }
 
 
-        /* =========================================
+        /* =====================================================
            MOBİL
-        ========================================= */
+        ===================================================== */
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
 
             body {
 
@@ -757,29 +1039,168 @@
             }
 
 
-            header {
+            .navbar {
+
+                height: 75px;
+
+            }
+
+
+            .logo-symbol {
+
+                width: 45px;
+
+                height: 45px;
+
+                font-size: 17px;
+
+            }
+
+
+            .logo-name {
+
+                font-size: .98rem;
+
+            }
+
+
+            .logo-subtitle {
+
+                font-size: .52rem;
+
+                letter-spacing: 3px;
+
+            }
+
+
+            /* Hamburger görünür */
+
+            .menu-toggle {
+
+                display: flex;
+
+            }
+
+
+            /* Menü başlangıçta kapalı */
+
+            .nav-menu {
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 4%;
+
+                right: 4%;
+
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+
+                padding: 10px;
+
+
+                background:
+
+                    rgba(5,8,13,.97);
+
+
+                border:
+
+                    1px solid
+                    rgba(198,161,91,.25);
+
+
+                border-radius: 14px;
+
+
+                box-shadow:
+
+                    0 20px 50px
+                    rgba(0,0,0,.55);
+
+
+                opacity: 0;
+
+                visibility: hidden;
+
+                transform:
+                    translateY(-10px);
+
+
+                transition: .3s ease;
+
+            }
+
+
+            /* Menü açıldığında */
+
+            .nav-menu.active {
+
+                opacity: 1;
+
+                visibility: visible;
+
+                transform:
+                    translateY(0);
+
+            }
+
+
+            .nav-menu a {
+
+                padding: 14px;
+
+                border-radius: 8px;
+
+            }
+
+
+            .nav-menu a:hover {
+
+                background:
+                    rgba(198,161,91,.07);
+
+            }
+
+
+            .nav-menu a::after {
+
+                display: none;
+
+            }
+
+
+            /* Hero */
+
+            .hero {
+
+                min-height:
+                    480px;
 
                 padding:
-                    50px 18px 35px;
+                    55px 18px;
 
             }
 
 
-            header h1 {
+            .hero h1 {
 
                 font-size:
-                    2.35rem;
-
-                letter-spacing:
-                    1px;
+                    2.6rem;
 
             }
 
 
-            header p {
+            .hero p {
 
                 font-size:
-                    0.95rem;
+                    .95rem;
 
             }
 
@@ -788,10 +1209,8 @@
 
                 width: 92%;
 
-                margin:
-                    35px auto 50px;
-
-                gap: 20px;
+                margin-bottom:
+                    55px;
 
             }
 
@@ -799,37 +1218,55 @@
             .section-box {
 
                 padding:
-                    27px 22px;
+                    27px 20px;
 
                 border-radius:
-                    18px;
+                    17px;
 
             }
 
 
-            .section-box h2 {
+            .section-title {
 
-                font-size:
-                    1.4rem;
-
-            }
-
-
-            .section-box p {
-
-                font-size:
-                    0.94rem;
-
-                line-height:
-                    1.8;
+                margin-bottom:
+                    22px;
 
             }
 
 
-            .section-box li {
+            .announcement-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .contact-item {
+
+                gap: 12px;
+
+                padding:
+                    14px;
+
+            }
+
+
+            .contact-icon {
+
+                min-width:
+                    40px;
+
+                height:
+                    40px;
+
+            }
+
+
+            .about-text {
 
                 font-size:
-                    0.90rem;
+                    .93rem;
 
             }
 
@@ -853,46 +1290,38 @@
 
             }
 
-
-            footer {
-
-                padding:
-                    25px 15px;
-
-            }
-
         }
 
 
-        /* =========================================
-           ÇOK KÜÇÜK EKRAN
-        ========================================= */
+        /* =====================================================
+           ÇOK KÜÇÜK TELEFON
+        ===================================================== */
 
-        @media (max-width: 380px) {
+        @media (max-width: 400px) {
 
-            header h1 {
+            .logo-name {
 
                 font-size:
-                    2rem;
+                    .88rem;
 
             }
 
 
-            .section-box {
+            .logo-subtitle {
 
-                padding:
-                    23px 18px;
+                font-size:
+                    .45rem;
+
+                letter-spacing:
+                    2px;
 
             }
 
 
-            .section-box li {
+            .hero h1 {
 
-                flex-direction:
-                    column;
-
-                gap:
-                    7px;
+                font-size:
+                    2.25rem;
 
             }
 
@@ -906,135 +1335,413 @@
 <body>
 
 
-    <!-- =========================================
-         ÜST BÖLÜM
-    ========================================== -->
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
 
     <header>
 
-        <h1>
-            Mehmet Kaburak
-        </h1>
+        <nav class="navbar">
 
 
-        <p>
-            Doğru hamle, güçlü maliye:
-            İşletmenizin güvenilir rehberi.
-        </p>
+            <!-- LOGO -->
+
+            <a href="#anasayfa"
+               class="logo">
+
+                <div class="logo-symbol">
+                    MK
+                </div>
+
+
+                <div class="logo-text">
+
+                    <span class="logo-name">
+                        MEHMET KABURAK
+                    </span>
+
+                    <span class="logo-subtitle">
+                        MALİ MÜŞAVİRLİK
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- MASAÜSTÜ / MOBİL MENÜ -->
+
+            <ul class="nav-menu"
+                id="navMenu">
+
+                <li>
+                    <a href="#duyurular">
+                        Duyurular
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#iletisim">
+                        İletişim & Adres
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#hakkimizda">
+                        Hakkımızda
+                    </a>
+                </li>
+
+            </ul>
+
+
+
+            <!-- HAMBURGER -->
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Menüyü Aç">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+        </nav>
 
     </header>
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section
+        class="hero"
+        id="anasayfa">
+
+
+        <div class="hero-content">
+
+
+            <div class="hero-line"></div>
+
+
+            <h1>
+                Mehmet Kaburak
+            </h1>
+
+
+            <p>
+                Doğru hamle, güçlü maliye:
+                İşletmenizin güvenilir rehberi.
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
          ANA İÇERİK
-    ========================================== -->
+    ===================================================== -->
 
     <main>
 
 
-        <!-- HAKKIMIZDA -->
+        <!-- =================================================
+             1 - DUYURULAR
+        ================================================= -->
 
-        <section class="section-box">
-
-            <h2>
-                Hakkımızda
-            </h2>
+        <section
+            class="section"
+            id="duyurular">
 
 
-            <p>
+            <div class="section-box">
 
-                Mehmet Kaburak Mali Müşavirlik Ofisi olarak,
-                işletmenizin finansal yapısını güçlendirmek,
-                yasal süreçlerinizi güvenle yönetmek ve
-                büyümenize stratejik destek sağlamak amacıyla
-                profesyonel hizmet sunmaktayız.
 
-            </p>
+                <div class="section-title">
+
+                    <div class="title-bar"></div>
+
+                    <h2>
+                        Duyurular
+                    </h2>
+
+                </div>
+
+
+
+                <div class="announcement-grid">
+
+
+                    <!-- DUYURU 1 -->
+
+                    <div class="announcement">
+
+                        <div class="announcement-icon">
+
+                            <i class="fa-solid fa-bullhorn"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Önemli Duyurular
+                        </h3>
+
+
+                        <p>
+                            Mali müşavirlik ofisimize ait
+                            güncel duyurular ve bilgilendirmeler
+                            bu alanda yayınlanacaktır.
+                        </p>
+
+
+                        <span class="announcement-date">
+                            GÜNCEL
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- DUYURU 2 -->
+
+                    <div class="announcement">
+
+                        <div class="announcement-icon">
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Vergi Takvimi
+                        </h3>
+
+
+                        <p>
+                            Vergi ve muhasebe süreçleriyle ilgili
+                            önemli tarihler ve hatırlatmalar
+                            burada paylaşılabilir.
+                        </p>
+
+
+                        <span class="announcement-date">
+                            BİLGİLENDİRME
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- DUYURU 3 -->
+
+                    <div class="announcement">
+
+                        <div class="announcement-icon">
+
+                            <i class="fa-solid fa-file-lines"></i>
+
+                        </div>
+
+
+                        <h3>
+                            Mevzuat Güncellemeleri
+                        </h3>
+
+
+                        <p>
+                            İşletmeleri ilgilendiren mevzuat
+                            değişiklikleri ve bilgilendirmeler
+                            bu bölümde yer alacaktır.
+                        </p>
+
+
+                        <span class="announcement-date">
+                            TAKİPTE KALIN
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
 
         </section>
 
 
 
-        <!-- İLETİŞİM -->
+        <!-- =================================================
+             2 - İLETİŞİM
+        ================================================= -->
 
-        <section class="section-box">
-
-            <h2>
-                İletişim & Adres
-            </h2>
-
-
-            <ul>
+        <section
+            class="section"
+            id="iletisim">
 
 
-                <!-- ADRES -->
+            <div class="section-box">
 
-                <li>
 
-                    <i class="fa-solid fa-location-dot"></i>
+                <div class="section-title">
 
-                    <span>
+                    <div class="title-bar"></div>
 
-                        <strong>
-                            Adres:
-                        </strong>
+                    <h2>
+                        İletişim & Adres
+                    </h2>
 
-                        Şerefiye mah İrfan Baştuğ CAD
-                        Yılmazlar iş merkezi kat 5 no.35
-                        İpekyolu Van
-
-                    </span>
-
-                </li>
+                </div>
 
 
 
-                <!-- TELEFON -->
-
-                <li>
-
-                    <i class="fa-solid fa-phone"></i>
-
-                    <span>
-
-                        <strong>
-                            Telefon:
-                        </strong>
+                <ul class="contact-list">
 
 
-                        <a href="tel:+905442017429">
+                    <!-- ADRES -->
 
-                            0544 201 74 29
-
-                        </a>
-
-                    </span>
-
-                </li>
+                    <li class="contact-item">
 
 
+                        <div class="contact-icon">
 
-                <!-- E-POSTA -->
+                            <i class="fa-solid fa-location-dot"></i>
 
-                <li>
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    <span>
-
-                        <strong>
-                            E-posta:
-                        </strong>
-
-                        bilgi@mehmetkaburak.com
-
-                    </span>
-
-                </li>
+                        </div>
 
 
-            </ul>
+                        <div class="contact-text">
+
+                            <strong>
+                                Adres
+                            </strong>
+
+
+                            Şerefiye mah İrfan Baştuğ CAD
+                            Yılmazlar iş merkezi kat 5 no.35
+                            İpekyolu Van
+
+                        </div>
+
+
+                    </li>
+
+
+
+                    <!-- TELEFON -->
+
+                    <li class="contact-item">
+
+
+                        <div class="contact-icon">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                        </div>
+
+
+                        <div class="contact-text">
+
+                            <strong>
+                                Telefon
+                            </strong>
+
+
+                            <a href="tel:+905442017429">
+
+                                0544 201 74 29
+
+                            </a>
+
+                        </div>
+
+
+                    </li>
+
+
+
+                    <!-- E-POSTA -->
+
+                    <li class="contact-item">
+
+
+                        <div class="contact-icon">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                        </div>
+
+
+                        <div class="contact-text">
+
+                            <strong>
+                                E-posta
+                            </strong>
+
+
+                            bilgi@mehmetkaburak.com
+
+                        </div>
+
+
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             3 - HAKKIMIZDA
+        ================================================= -->
+
+        <section
+            class="section"
+            id="hakkimizda">
+
+
+            <div class="section-box">
+
+
+                <div class="section-title">
+
+                    <div class="title-bar"></div>
+
+                    <h2>
+                        Hakkımızda
+                    </h2>
+
+                </div>
+
+
+                <p class="about-text">
+
+                    Mehmet Kaburak Mali Müşavirlik Ofisi olarak,
+                    işletmenizin finansal yapısını güçlendirmek,
+                    yasal süreçlerinizi güvenle yönetmek ve
+                    büyümenize stratejik destek sağlamak amacıyla
+                    profesyonel hizmet sunmaktayız.
+
+                </p>
+
+
+            </div>
 
         </section>
 
@@ -1043,25 +1750,17 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
          WHATSAPP
-    ========================================== -->
+    ===================================================== -->
 
     <a
-
         href="https://wa.me/905442017429?text=Merhaba,%20bilgi%20almak%20istiyorum."
-
         class="whatsapp-btn"
-
         target="_blank"
-
         rel="noopener noreferrer"
-
         title="WhatsApp ile İletişime Geçin"
-
-        aria-label="WhatsApp ile İletişime Geçin"
-
-    >
+        aria-label="WhatsApp ile İletişime Geçin">
 
         <i class="fa-brands fa-whatsapp"></i>
 
@@ -1069,9 +1768,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
          FOOTER
-    ========================================== -->
+    ===================================================== -->
 
     <footer>
 
@@ -1083,6 +1782,46 @@
         </p>
 
     </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         HAMBURGER MENÜ
+    ===================================================== -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navMenu =
+            document.getElementById("navMenu");
+
+
+        /* Hamburger'e basınca menüyü aç/kapat */
+
+        menuToggle.addEventListener("click", function () {
+
+            navMenu.classList.toggle("active");
+
+        });
+
+
+        /* Menüdeki linke basınca mobil menüyü kapat */
+
+        document.querySelectorAll(".nav-menu a")
+            .forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    navMenu.classList.remove("active");
+
+                });
+
+            });
+
+    </script>
 
 
 </body>
