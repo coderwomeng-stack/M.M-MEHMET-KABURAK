@@ -36,6 +36,29 @@
     <style>
 
         /* =====================================================
+           RENKLER
+        ===================================================== */
+
+        :root {
+
+            --gold: #c6a15b;
+            --gold-light: #d8bd82;
+            --gold-dark: #98783c;
+
+            --dark: #05070b;
+
+            --card: rgba(8, 12, 18, 0.88);
+
+            --border: rgba(198, 161, 91, 0.25);
+
+            --text: #e3e6eb;
+
+            --muted: #9ca3ad;
+
+        }
+
+
+        /* =====================================================
            GENEL
         ===================================================== */
 
@@ -55,19 +78,12 @@
 
             font-family: 'Inter', sans-serif;
 
-            color: #f4f4f4;
+            color: #ffffff;
 
             min-height: 100vh;
 
             overflow-x: hidden;
 
-
-            /*
-            SATRANÇ ARKA PLANI
-
-            arkaplan.jpg dosyasını
-            index.html ile aynı klasöre koy.
-            */
 
             background-image:
 
@@ -91,32 +107,7 @@
 
 
         /* =====================================================
-           MAT GOLD RENK
-        ===================================================== */
-
-        :root {
-
-            --gold: #c6a15b;
-
-            --gold-light: #d8bd82;
-
-            --gold-dark: #98783c;
-
-            --dark: #05070b;
-
-            --card: rgba(8, 12, 18, 0.78);
-
-            --border: rgba(198, 161, 91, 0.25);
-
-            --text: #e3e6eb;
-
-            --muted: #9ca3ad;
-
-        }
-
-
-        /* =====================================================
-           HEADER / NAVBAR
+           NAVBAR
         ===================================================== */
 
         header {
@@ -130,7 +121,7 @@
 
             background:
 
-                rgba(3, 5, 9, 0.88);
+                rgba(3, 5, 9, 0.91);
 
 
             backdrop-filter: blur(15px);
@@ -180,6 +171,10 @@
 
             color: white;
 
+            cursor: pointer;
+
+            user-select: none;
+
         }
 
 
@@ -189,17 +184,18 @@
 
             height: 52px;
 
-            border:
-
-                1px solid
-                var(--gold);
-
 
             display: flex;
 
             align-items: center;
 
             justify-content: center;
+
+
+            border:
+
+                1px solid
+                var(--gold);
 
 
             border-radius: 50%;
@@ -214,13 +210,37 @@
 
             font-weight: 700;
 
-            color: var(--gold-light);
+
+            color:
+                var(--gold-light);
+
+
+            background:
+
+                rgba(198,161,91,0.035);
 
 
             box-shadow:
 
                 inset 0 0 15px
                 rgba(198,161,91,0.08);
+
+
+            transition: .3s ease;
+
+        }
+
+
+        .logo:hover .logo-symbol {
+
+            border-color:
+                var(--gold-light);
+
+
+            box-shadow:
+
+                0 0 20px
+                rgba(198,161,91,0.15);
 
         }
 
@@ -245,7 +265,8 @@
 
             letter-spacing: 1.5px;
 
-            color: var(--gold-light);
+            color:
+                var(--gold-light);
 
         }
 
@@ -313,25 +334,32 @@
 
             height: 1px;
 
-            background: var(--gold);
+            background:
+                var(--gold);
 
-            transform: scaleX(0);
 
-            transition: .3s ease;
+            transform:
+                scaleX(0);
+
+
+            transition:
+                .3s ease;
 
         }
 
 
         .nav-menu a:hover {
 
-            color: var(--gold-light);
+            color:
+                var(--gold-light);
 
         }
 
 
         .nav-menu a:hover::after {
 
-            transform: scaleX(1);
+            transform:
+                scaleX(1);
 
         }
 
@@ -356,11 +384,13 @@
 
             border-radius: 10px;
 
+
             background:
                 rgba(255,255,255,0.03);
 
 
             cursor: pointer;
+
 
             flex-direction: column;
 
@@ -379,7 +409,9 @@
 
             height: 2px;
 
-            background: var(--gold-light);
+            background:
+                var(--gold-light);
+
 
             border-radius: 5px;
 
@@ -396,15 +428,19 @@
 
             min-height: 590px;
 
+
             display: flex;
 
             align-items: center;
 
             justify-content: center;
 
+
             text-align: center;
 
-            padding: 70px 20px 80px;
+
+            padding:
+                70px 20px 80px;
 
 
             background:
@@ -431,7 +467,9 @@
 
             height: 2px;
 
-            margin: 0 auto 25px;
+            margin:
+                0 auto 25px;
+
 
             background:
 
@@ -458,7 +496,10 @@
 
             line-height: 1.1;
 
-            color: var(--gold-light);
+
+            color:
+                var(--gold-light);
+
 
             letter-spacing: 2px;
 
@@ -475,7 +516,9 @@
 
             max-width: 700px;
 
-            margin: 25px auto 0;
+            margin:
+                25px auto 0;
+
 
             font-size:
                 clamp(1rem, 2vw, 1.25rem);
@@ -494,9 +537,12 @@
 
         main {
 
-            width: min(1050px, 92%);
+            width:
+                min(1050px, 92%);
 
-            margin: 0 auto 80px;
+
+            margin:
+                0 auto 80px;
 
         }
 
@@ -552,7 +598,9 @@
 
             overflow: hidden;
 
-            transition: .35s ease;
+
+            transition:
+                .35s ease;
 
         }
 
@@ -598,7 +646,7 @@
 
 
         /* =====================================================
-           BAŞLIK
+           BÖLÜM BAŞLIĞI
         ===================================================== */
 
         .section-title {
@@ -645,7 +693,8 @@
                 clamp(1.5rem, 4vw, 2rem);
 
 
-            color: var(--gold-light);
+            color:
+                var(--gold-light);
 
         }
 
@@ -668,23 +717,24 @@
 
         .announcement {
 
+            position: relative;
+
             padding: 25px;
 
             border-radius: 15px;
 
 
             background:
-
                 rgba(255,255,255,0.025);
 
 
             border:
-
                 1px solid
                 rgba(255,255,255,0.08);
 
 
-            transition: .3s ease;
+            transition:
+                .3s ease;
 
         }
 
@@ -692,12 +742,10 @@
         .announcement:hover {
 
             background:
-
                 rgba(198,161,91,0.055);
 
 
             border-color:
-
                 rgba(198,161,91,0.28);
 
 
@@ -713,6 +761,7 @@
 
             height: 45px;
 
+
             display: flex;
 
             align-items: center;
@@ -723,10 +772,11 @@
             border-radius: 10px;
 
 
-            color: var(--gold-light);
+            color:
+                var(--gold-light);
+
 
             border:
-
                 1px solid
                 var(--border);
 
@@ -754,7 +804,9 @@
 
         .announcement p {
 
-            color: var(--muted);
+            color:
+                var(--muted);
+
 
             font-size: .9rem;
 
@@ -769,11 +821,42 @@
 
             margin-top: 15px;
 
-            color: var(--gold);
+            color:
+                var(--gold);
+
 
             font-size: .75rem;
 
             letter-spacing: 1px;
+
+        }
+
+
+        /* =====================================================
+           DUYURU YOK
+        ===================================================== */
+
+        .no-announcements {
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            color:
+                var(--muted);
+
+        }
+
+
+        .no-announcements i {
+
+            font-size: 2rem;
+
+            color:
+                var(--gold);
+
+
+            margin-bottom: 15px;
 
         }
 
@@ -807,19 +890,19 @@
 
 
             background:
-
                 rgba(255,255,255,0.025);
 
 
             border:
-
                 1px solid
                 rgba(255,255,255,0.06);
 
 
             border-radius: 13px;
 
-            transition: .3s ease;
+
+            transition:
+                .3s ease;
 
         }
 
@@ -827,12 +910,10 @@
         .contact-item:hover {
 
             background:
-
                 rgba(198,161,91,0.05);
 
 
             border-color:
-
                 rgba(198,161,91,0.22);
 
         }
@@ -843,6 +924,7 @@
             min-width: 45px;
 
             height: 45px;
+
 
             display: flex;
 
@@ -855,14 +937,12 @@
 
 
             border:
-
                 1px solid
                 var(--border);
 
 
-            color: var(--gold-light);
-
-            font-size: 1rem;
+            color:
+                var(--gold-light);
 
         }
 
@@ -871,7 +951,8 @@
 
             line-height: 1.7;
 
-            color: #d5d8de;
+            color:
+                #d5d8de;
 
         }
 
@@ -880,7 +961,8 @@
 
             display: block;
 
-            color: var(--gold-light);
+            color:
+                var(--gold-light);
 
             margin-bottom: 3px;
 
@@ -889,18 +971,21 @@
 
         .contact-text a {
 
-            color: #d5d8de;
+            color:
+                #d5d8de;
 
             text-decoration: none;
 
-            transition: .25s ease;
+            transition:
+                .25s ease;
 
         }
 
 
         .contact-text a:hover {
 
-            color: var(--gold-light);
+            color:
+                var(--gold-light);
 
         }
 
@@ -911,11 +996,16 @@
 
         .about-text {
 
-            color: #d5d8de;
+            color:
+                #d5d8de;
 
-            font-size: 1rem;
 
-            line-height: 2;
+            font-size:
+                1rem;
+
+
+            line-height:
+                2;
 
         }
 
@@ -932,6 +1022,7 @@
 
             bottom: 28px;
 
+
             width: 64px;
 
             height: 64px;
@@ -947,17 +1038,24 @@
             border-radius: 50%;
 
 
-            background: #25d366;
-
-            color: white;
-
-
-            font-size: 1.9rem;
-
-            text-decoration: none;
+            background:
+                #25d366;
 
 
-            z-index: 3000;
+            color:
+                white;
+
+
+            font-size:
+                1.9rem;
+
+
+            text-decoration:
+                none;
+
+
+            z-index:
+                3000;
 
 
             box-shadow:
@@ -969,7 +1067,8 @@
                 rgba(37,211,102,.08);
 
 
-            transition: .3s ease;
+            transition:
+                .3s ease;
 
         }
 
@@ -991,7 +1090,9 @@
 
             text-align: center;
 
-            padding: 30px 20px;
+            padding:
+                30px 20px;
+
 
             background:
                 rgba(2,4,8,.92);
@@ -1003,24 +1104,1192 @@
                 rgba(198,161,91,.15);
 
 
-            color: #8f959f;
+            color:
+                #8f959f;
 
-            font-size: .85rem;
+
+            font-size:
+                .85rem;
 
         }
 
 
         /* =====================================================
-           TABLET
+           MODAL GENEL
         ===================================================== */
 
-        @media (max-width: 850px) {
+        .modal {
 
-            .announcement-grid {
+            position: fixed;
 
-                grid-template-columns: 1fr;
+            inset: 0;
 
-            }
+            z-index: 5000;
+
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+
+            padding: 20px;
+
+
+            background:
+                rgba(0,0,0,.78);
+
+
+            backdrop-filter:
+                blur(10px);
+
+
+            opacity: 0;
+
+            visibility: hidden;
+
+
+            transition:
+                .3s ease;
+
+        }
+
+
+        .modal.active {
+
+            opacity: 1;
+
+            visibility: visible;
+
+        }
+
+
+        /* =====================================================
+           GİRİŞ MODAL
+        ===================================================== */
+
+        .login-box {
+
+            width:
+                min(430px, 100%);
+
+
+            padding:
+                42px 35px;
+
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #111721,
+                    #070b11
+                );
+
+
+            border:
+                1px solid
+                var(--border);
+
+
+            border-radius:
+                22px;
+
+
+            box-shadow:
+
+                0 35px 100px
+                rgba(0,0,0,.65);
+
+
+            transform:
+                translateY(20px)
+                scale(.97);
+
+
+            transition:
+                .35s ease;
+
+        }
+
+
+        .modal.active .login-box {
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+
+        .login-logo {
+
+            width: 70px;
+
+            height: 70px;
+
+
+            margin:
+                0 auto 20px;
+
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+
+            border:
+                1px solid
+                var(--gold);
+
+
+            border-radius: 50%;
+
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+
+            font-size:
+                25px;
+
+
+            color:
+                var(--gold-light);
+
+
+            box-shadow:
+
+                0 0 30px
+                rgba(198,161,91,.08);
+
+        }
+
+
+        .login-box h2 {
+
+            text-align:
+                center;
+
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+
+            color:
+                var(--gold-light);
+
+
+            font-size:
+                1.8rem;
+
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .login-box > p {
+
+            text-align:
+                center;
+
+
+            color:
+                var(--muted);
+
+
+            font-size:
+                .85rem;
+
+
+            margin-bottom:
+                30px;
+
+        }
+
+
+        /* =====================================================
+           INPUT
+        ===================================================== */
+
+        .input-wrapper {
+
+            position:
+                relative;
+
+
+            margin-bottom:
+                18px;
+
+        }
+
+
+        .input-wrapper > i {
+
+            position:
+                absolute;
+
+
+            left:
+                17px;
+
+
+            top:
+                50%;
+
+
+            transform:
+                translateY(-50%);
+
+
+            color:
+                var(--gold);
+
+
+            z-index:
+                2;
+
+        }
+
+
+        .password-input {
+
+            width:
+                100%;
+
+
+            height:
+                58px;
+
+
+            padding:
+                0 50px 0 48px;
+
+
+            border:
+                1px solid
+                rgba(198,161,91,.25);
+
+
+            border-radius:
+                13px;
+
+
+            outline:
+                none;
+
+
+            background:
+                rgba(255,255,255,.035);
+
+
+            color:
+                white;
+
+
+            font-size:
+                1rem;
+
+
+            transition:
+                .25s ease;
+
+        }
+
+
+        .password-input::placeholder {
+
+            color:
+                #777f8b;
+
+        }
+
+
+        .password-input:focus {
+
+            border-color:
+                var(--gold);
+
+
+            background:
+                rgba(198,161,91,.045);
+
+
+            box-shadow:
+
+                0 0 0 4px
+                rgba(198,161,91,.07);
+
+        }
+
+
+        .show-password {
+
+            position:
+                absolute;
+
+
+            right:
+                16px;
+
+
+            top:
+                50%;
+
+
+            transform:
+                translateY(-50%);
+
+
+            border:
+                none;
+
+
+            background:
+                transparent;
+
+
+            color:
+                #858c96;
+
+
+            cursor:
+                pointer;
+
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .show-password:hover {
+
+            color:
+                var(--gold-light);
+
+        }
+
+
+        /* =====================================================
+           LOGIN BUTON
+        ===================================================== */
+
+        .login-button {
+
+            width:
+                100%;
+
+
+            height:
+                55px;
+
+
+            border:
+                1px solid
+                var(--gold);
+
+
+            border-radius:
+                12px;
+
+
+            background:
+                rgba(198,161,91,.10);
+
+
+            color:
+                var(--gold-light);
+
+
+            font-weight:
+                600;
+
+
+            letter-spacing:
+                .5px;
+
+
+            cursor:
+                pointer;
+
+
+            transition:
+                .3s ease;
+
+        }
+
+
+        .login-button:hover {
+
+            background:
+                var(--gold);
+
+
+            color:
+                #111;
+
+
+            box-shadow:
+
+                0 10px 30px
+                rgba(198,161,91,.15);
+
+        }
+
+
+        .login-error {
+
+            min-height:
+                20px;
+
+
+            margin:
+                12px 0 0;
+
+
+            text-align:
+                center;
+
+
+            color:
+                #d87979;
+
+
+            font-size:
+                .8rem;
+
+        }
+
+
+        .close-modal {
+
+            position:
+                absolute;
+
+
+            top:
+                18px;
+
+
+            right:
+                20px;
+
+
+            width:
+                38px;
+
+
+            height:
+                38px;
+
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+
+            border-radius:
+                50%;
+
+
+            background:
+                rgba(255,255,255,.03);
+
+
+            color:
+                #aeb4bd;
+
+
+            cursor:
+                pointer;
+
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .close-modal:hover {
+
+            color:
+                var(--gold-light);
+
+
+            border-color:
+                var(--border);
+
+        }
+
+
+        /* =====================================================
+           ADMIN PANEL
+        ===================================================== */
+
+        .admin-box {
+
+            position:
+                relative;
+
+
+            width:
+                min(900px, 100%);
+
+
+            max-height:
+                90vh;
+
+
+            overflow-y:
+                auto;
+
+
+            padding:
+                35px;
+
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #101620,
+                    #060a10
+                );
+
+
+            border:
+                1px solid
+                var(--border);
+
+
+            border-radius:
+                22px;
+
+
+            box-shadow:
+                0 35px 100px
+                rgba(0,0,0,.70);
+
+
+            transform:
+                translateY(20px)
+                scale(.97);
+
+
+            transition:
+                .35s ease;
+
+        }
+
+
+        .modal.active .admin-box {
+
+            transform:
+                translateY(0)
+                scale(1);
+
+        }
+
+
+        .admin-header {
+
+            display:
+                flex;
+
+
+            align-items:
+                center;
+
+
+            justify-content:
+                space-between;
+
+
+            gap:
+                20px;
+
+
+            padding-bottom:
+                25px;
+
+
+            margin-bottom:
+                25px;
+
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.08);
+
+        }
+
+
+        .admin-heading {
+
+            display:
+                flex;
+
+
+            align-items:
+                center;
+
+
+            gap:
+                15px;
+
+        }
+
+
+        .admin-mini-logo {
+
+            width:
+                55px;
+
+
+            height:
+                55px;
+
+
+            display:
+                flex;
+
+
+            align-items:
+                center;
+
+
+            justify-content:
+                center;
+
+
+            border:
+                1px solid
+                var(--gold);
+
+
+            border-radius:
+                50%;
+
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+
+            color:
+                var(--gold-light);
+
+        }
+
+
+        .admin-header h2 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+
+            color:
+                var(--gold-light);
+
+
+            font-size:
+                1.5rem;
+
+        }
+
+
+        .admin-header p {
+
+            color:
+                var(--muted);
+
+
+            font-size:
+                .78rem;
+
+
+            margin-top:
+                4px;
+
+        }
+
+
+        .logout-button {
+
+            border:
+                1px solid
+                rgba(198,161,91,.25);
+
+
+            background:
+                rgba(198,161,91,.05);
+
+
+            color:
+                var(--gold-light);
+
+
+            padding:
+                10px 15px;
+
+
+            border-radius:
+                9px;
+
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .logout-button:hover {
+
+            background:
+                rgba(198,161,91,.12);
+
+        }
+
+
+        /* =====================================================
+           ADMIN FORM
+        ===================================================== */
+
+        .admin-form {
+
+            padding:
+                25px;
+
+
+            border:
+                1px solid
+                rgba(255,255,255,.07);
+
+
+            border-radius:
+                16px;
+
+
+            background:
+                rgba(255,255,255,.025);
+
+
+            margin-bottom:
+                30px;
+
+        }
+
+
+        .admin-form h3 {
+
+            color:
+                #e8e8e8;
+
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .form-grid {
+
+            display:
+                grid;
+
+
+            grid-template-columns:
+                1fr 1fr;
+
+
+            gap:
+                15px;
+
+        }
+
+
+        .form-control {
+
+            width:
+                100%;
+
+
+            height:
+                50px;
+
+
+            padding:
+                0 15px;
+
+
+            border:
+                1px solid
+                rgba(198,161,91,.18);
+
+
+            border-radius:
+                10px;
+
+
+            background:
+                rgba(0,0,0,.20);
+
+
+            color:
+                white;
+
+
+            outline:
+                none;
+
+
+            font-family:
+                inherit;
+
+        }
+
+
+        .form-control:focus {
+
+            border-color:
+                var(--gold);
+
+        }
+
+
+        textarea.form-control {
+
+            height:
+                120px;
+
+
+            padding:
+                15px;
+
+
+            resize:
+                vertical;
+
+        }
+
+
+        .full-width {
+
+            grid-column:
+                1 / -1;
+
+        }
+
+
+        .form-buttons {
+
+            display:
+                flex;
+
+
+            gap:
+                10px;
+
+
+            margin-top:
+                15px;
+
+        }
+
+
+        .admin-primary {
+
+            border:
+                1px solid
+                var(--gold);
+
+
+            background:
+                var(--gold);
+
+
+            color:
+                #111;
+
+
+            padding:
+                12px 20px;
+
+
+            border-radius:
+                9px;
+
+
+            font-weight:
+                600;
+
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .admin-secondary {
+
+            border:
+                1px solid
+                rgba(255,255,255,.12);
+
+
+            background:
+                transparent;
+
+
+            color:
+                #bfc4cc;
+
+
+            padding:
+                12px 20px;
+
+
+            border-radius:
+                9px;
+
+
+            cursor:
+                pointer;
+
+        }
+
+
+        .admin-primary:hover {
+
+            background:
+                var(--gold-light);
+
+        }
+
+
+        /* =====================================================
+           ADMIN DUYURU LİSTESİ
+        ===================================================== */
+
+        .admin-list-title {
+
+            display:
+                flex;
+
+
+            align-items:
+                center;
+
+
+            justify-content:
+                space-between;
+
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .admin-list-title h3 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+
+            color:
+                var(--gold-light);
+
+        }
+
+
+        .announcement-count {
+
+            color:
+                var(--muted);
+
+
+            font-size:
+                .8rem;
+
+        }
+
+
+        .admin-announcement {
+
+            display:
+                flex;
+
+
+            align-items:
+                center;
+
+
+            justify-content:
+                space-between;
+
+
+            gap:
+                20px;
+
+
+            padding:
+                18px;
+
+
+            margin-bottom:
+                10px;
+
+
+            border:
+                1px solid
+                rgba(255,255,255,.07);
+
+
+            border-radius:
+                12px;
+
+
+            background:
+                rgba(255,255,255,.025);
+
+        }
+
+
+        .admin-announcement-info {
+
+            min-width:
+                0;
+
+        }
+
+
+        .admin-announcement-info h4 {
+
+            color:
+                #e7e7e7;
+
+
+            margin-bottom:
+                5px;
+
+        }
+
+
+        .admin-announcement-info p {
+
+            color:
+                var(--muted);
+
+
+            font-size:
+                .82rem;
+
+
+            overflow:
+                hidden;
+
+
+            text-overflow:
+                ellipsis;
+
+        }
+
+
+        .admin-announcement-actions {
+
+            display:
+                flex;
+
+
+            gap:
+                7px;
+
+
+            flex-shrink:
+                0;
+
+        }
+
+
+        .edit-btn,
+        .delete-btn {
+
+            width:
+                38px;
+
+
+            height:
+                38px;
+
+
+            border-radius:
+                8px;
+
+
+            cursor:
+                pointer;
+
+
+            background:
+                transparent;
+
+        }
+
+
+        .edit-btn {
+
+            border:
+                1px solid
+                rgba(198,161,91,.25);
+
+
+            color:
+                var(--gold-light);
+
+        }
+
+
+        .delete-btn {
+
+            border:
+                1px solid
+                rgba(200,80,80,.25);
+
+
+            color:
+                #d77d7d;
+
+        }
+
+
+        .edit-btn:hover {
+
+            background:
+                rgba(198,161,91,.10);
+
+        }
+
+
+        .delete-btn:hover {
+
+            background:
+                rgba(200,80,80,.10);
 
         }
 
@@ -1028,6 +2297,18 @@
         /* =====================================================
            MOBİL
         ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .announcement-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+        }
+
 
         @media (max-width: 700px) {
 
@@ -1041,110 +2322,132 @@
 
             .navbar {
 
-                height: 75px;
+                height:
+                    75px;
 
             }
 
 
             .logo-symbol {
 
-                width: 45px;
+                width:
+                    45px;
 
-                height: 45px;
+                height:
+                    45px;
 
-                font-size: 17px;
+                font-size:
+                    17px;
 
             }
 
 
             .logo-name {
 
-                font-size: .98rem;
+                font-size:
+                    .98rem;
 
             }
 
 
             .logo-subtitle {
 
-                font-size: .52rem;
+                font-size:
+                    .52rem;
 
-                letter-spacing: 3px;
+                letter-spacing:
+                    3px;
 
             }
 
-
-            /* Hamburger görünür */
 
             .menu-toggle {
 
-                display: flex;
+                display:
+                    flex;
 
             }
 
 
-            /* Menü başlangıçta kapalı */
-
             .nav-menu {
 
-                position: absolute;
-
-                top: 75px;
-
-                left: 4%;
-
-                right: 4%;
+                position:
+                    absolute;
 
 
-                display: flex;
-
-                flex-direction: column;
-
-                align-items: stretch;
+                top:
+                    75px;
 
 
-                padding: 10px;
+                left:
+                    4%;
+
+
+                right:
+                    4%;
+
+
+                display:
+                    flex;
+
+
+                flex-direction:
+                    column;
+
+
+                align-items:
+                    stretch;
+
+
+                padding:
+                    10px;
 
 
                 background:
-
-                    rgba(5,8,13,.97);
+                    rgba(5,8,13,.98);
 
 
                 border:
-
                     1px solid
                     rgba(198,161,91,.25);
 
 
-                border-radius: 14px;
+                border-radius:
+                    14px;
 
 
                 box-shadow:
-
                     0 20px 50px
                     rgba(0,0,0,.55);
 
 
-                opacity: 0;
+                opacity:
+                    0;
 
-                visibility: hidden;
+
+                visibility:
+                    hidden;
+
 
                 transform:
                     translateY(-10px);
 
 
-                transition: .3s ease;
+                transition:
+                    .3s ease;
 
             }
 
 
-            /* Menü açıldığında */
-
             .nav-menu.active {
 
-                opacity: 1;
+                opacity:
+                    1;
 
-                visibility: visible;
+
+                visibility:
+                    visible;
+
 
                 transform:
                     translateY(0);
@@ -1154,9 +2457,11 @@
 
             .nav-menu a {
 
-                padding: 14px;
+                padding:
+                    14px;
 
-                border-radius: 8px;
+                border-radius:
+                    8px;
 
             }
 
@@ -1171,12 +2476,11 @@
 
             .nav-menu a::after {
 
-                display: none;
+                display:
+                    none;
 
             }
 
-
-            /* Hero */
 
             .hero {
 
@@ -1207,7 +2511,9 @@
 
             main {
 
-                width: 92%;
+                width:
+                    92%;
+
 
                 margin-bottom:
                     55px;
@@ -1219,6 +2525,7 @@
 
                 padding:
                     27px 20px;
+
 
                 border-radius:
                     17px;
@@ -1234,17 +2541,11 @@
             }
 
 
-            .announcement-grid {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-
             .contact-item {
 
-                gap: 12px;
+                gap:
+                    12px;
+
 
                 padding:
                     14px;
@@ -1279,23 +2580,130 @@
                 height:
                     58px;
 
+
                 right:
                     18px;
 
                 bottom:
                     18px;
 
+
                 font-size:
                     1.7rem;
 
             }
 
+
+            .login-box {
+
+                padding:
+                    35px 22px;
+
+            }
+
+
+            .admin-box {
+
+                padding:
+                    22px;
+
+                max-height:
+                    94vh;
+
+            }
+
+
+            .admin-header {
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .admin-heading {
+
+                gap:
+                    10px;
+
+            }
+
+
+            .admin-mini-logo {
+
+                width:
+                    45px;
+
+                height:
+                    45px;
+
+            }
+
+
+            .admin-header h2 {
+
+                font-size:
+                    1.2rem;
+
+            }
+
+
+            .logout-button {
+
+                font-size:
+                    .75rem;
+
+                padding:
+                    8px 10px;
+
+            }
+
+
+            .form-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .full-width {
+
+                grid-column:
+                    auto;
+
+            }
+
+
+            .admin-announcement {
+
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
+
+            }
+
+
+            .admin-announcement-actions {
+
+                width:
+                    100%;
+
+            }
+
+
+            .edit-btn,
+            .delete-btn {
+
+                width:
+                    45px;
+
+            }
+
         }
 
-
-        /* =====================================================
-           ÇOK KÜÇÜK TELEFON
-        ===================================================== */
 
         @media (max-width: 400px) {
 
@@ -1346,8 +2754,11 @@
 
             <!-- LOGO -->
 
-            <a href="#anasayfa"
-               class="logo">
+            <a
+                href="#anasayfa"
+                class="logo"
+                id="adminLogo"
+                title="Mehmet Kaburak">
 
                 <div class="logo-symbol">
                     MK
@@ -1370,9 +2781,10 @@
 
 
 
-            <!-- MASAÜSTÜ / MOBİL MENÜ -->
+            <!-- MENÜ -->
 
-            <ul class="nav-menu"
+            <ul
+                class="nav-menu"
                 id="navMenu">
 
                 <li>
@@ -1409,7 +2821,6 @@
                 <span></span>
 
             </button>
-
 
         </nav>
 
@@ -1457,7 +2868,7 @@
 
 
         <!-- =================================================
-             1 - DUYURULAR
+             DUYURULAR
         ================================================= -->
 
         <section
@@ -1479,103 +2890,14 @@
                 </div>
 
 
+                <!-- JS BURAYA DUYURULARI GETİRECEK -->
 
-                <div class="announcement-grid">
-
-
-                    <!-- DUYURU 1 -->
-
-                    <div class="announcement">
-
-                        <div class="announcement-icon">
-
-                            <i class="fa-solid fa-bullhorn"></i>
-
-                        </div>
-
-
-                        <h3>
-                            Önemli Duyurular
-                        </h3>
-
-
-                        <p>
-                            Mali müşavirlik ofisimize ait
-                            güncel duyurular ve bilgilendirmeler
-                            bu alanda yayınlanacaktır.
-                        </p>
-
-
-                        <span class="announcement-date">
-                            GÜNCEL
-                        </span>
-
-                    </div>
-
-
-
-                    <!-- DUYURU 2 -->
-
-                    <div class="announcement">
-
-                        <div class="announcement-icon">
-
-                            <i class="fa-solid fa-calendar-days"></i>
-
-                        </div>
-
-
-                        <h3>
-                            Vergi Takvimi
-                        </h3>
-
-
-                        <p>
-                            Vergi ve muhasebe süreçleriyle ilgili
-                            önemli tarihler ve hatırlatmalar
-                            burada paylaşılabilir.
-                        </p>
-
-
-                        <span class="announcement-date">
-                            BİLGİLENDİRME
-                        </span>
-
-                    </div>
-
-
-
-                    <!-- DUYURU 3 -->
-
-                    <div class="announcement">
-
-                        <div class="announcement-icon">
-
-                            <i class="fa-solid fa-file-lines"></i>
-
-                        </div>
-
-
-                        <h3>
-                            Mevzuat Güncellemeleri
-                        </h3>
-
-
-                        <p>
-                            İşletmeleri ilgilendiren mevzuat
-                            değişiklikleri ve bilgilendirmeler
-                            bu bölümde yer alacaktır.
-                        </p>
-
-
-                        <span class="announcement-date">
-                            TAKİPTE KALIN
-                        </span>
-
-                    </div>
-
+                <div
+                    class="announcement-grid"
+                    id="announcementContainer">
 
                 </div>
+
 
             </div>
 
@@ -1584,7 +2906,7 @@
 
 
         <!-- =================================================
-             2 - İLETİŞİM
+             İLETİŞİM
         ================================================= -->
 
         <section
@@ -1604,7 +2926,6 @@
                     </h2>
 
                 </div>
-
 
 
                 <ul class="contact-list">
@@ -1708,7 +3029,7 @@
 
 
         <!-- =================================================
-             3 - HAKKIMIZDA
+             HAKKIMIZDA
         ================================================= -->
 
         <section
@@ -1786,40 +3107,1261 @@
 
 
     <!-- =====================================================
+         YÖNETİCİ GİRİŞ MODALI
+    ===================================================== -->
+
+    <div
+        class="modal"
+        id="loginModal">
+
+
+        <div class="login-box">
+
+
+            <button
+                class="close-modal"
+                id="closeLogin">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div class="login-logo">
+                MK
+            </div>
+
+
+            <h2>
+                Yönetici Girişi
+            </h2>
+
+
+            <p>
+                Yönetim paneline erişmek için şifrenizi girin.
+            </p>
+
+
+            <form id="loginForm">
+
+
+                <div class="input-wrapper">
+
+
+                    <i class="fa-solid fa-lock"></i>
+
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        class="password-input"
+                        placeholder="Yönetici şifresi"
+                        autocomplete="current-password"
+                        required>
+
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="showPassword"
+                        aria-label="Şifreyi göster">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-button">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    &nbsp;
+
+                    Giriş Yap
+
+                </button>
+
+
+                <div
+                    class="login-error"
+                    id="loginError">
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         YÖNETİCİ PANELİ
+    ===================================================== -->
+
+    <div
+        class="modal"
+        id="adminModal">
+
+
+        <div class="admin-box">
+
+
+            <!-- PANEL BAŞLIK -->
+
+            <div class="admin-header">
+
+
+                <div class="admin-heading">
+
+
+                    <div class="admin-mini-logo">
+                        MK
+                    </div>
+
+
+                    <div>
+
+                        <h2>
+                            Yönetici Paneli
+                        </h2>
+
+                        <p>
+                            Duyurularınızı buradan yönetin.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="logout-button"
+                    id="logoutButton">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Çıkış
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- DUYURU FORMU -->
+
+            <div class="admin-form">
+
+
+                <h3 id="formTitle">
+                    Yeni Duyuru Ekle
+                </h3>
+
+
+                <form id="announcementForm">
+
+
+                    <div class="form-grid">
+
+
+                        <!-- BAŞLIK -->
+
+                        <input
+                            type="text"
+                            id="announcementTitle"
+                            class="form-control"
+                            placeholder="Duyuru başlığı"
+                            required>
+
+
+                        <!-- TARİH -->
+
+                        <input
+                            type="date"
+                            id="announcementDate"
+                            class="form-control"
+                            required>
+
+
+                        <!-- AÇIKLAMA -->
+
+                        <textarea
+                            id="announcementText"
+                            class="form-control full-width"
+                            placeholder="Duyuru açıklamasını yazın..."
+                            required></textarea>
+
+
+                    </div>
+
+
+                    <div class="form-buttons">
+
+
+                        <button
+                            type="submit"
+                            class="admin-primary"
+                            id="saveAnnouncement">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Duyuruyu Ekle
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="admin-secondary"
+                            id="cancelEdit"
+                            style="display:none;">
+
+                            İptal
+
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- DUYURU LİSTESİ -->
+
+            <div class="admin-list">
+
+
+                <div class="admin-list-title">
+
+
+                    <h3>
+                        Mevcut Duyurular
+                    </h3>
+
+
+                    <span
+                        class="announcement-count"
+                        id="announcementCount">
+
+                        0 duyuru
+
+                    </span>
+
+
+                </div>
+
+
+                <div id="adminAnnouncementList">
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
          JAVASCRIPT
-         HAMBURGER MENÜ
     ===================================================== -->
 
     <script>
 
+
+        /* =====================================================
+           YÖNETİCİ ŞİFRESİ
+        =====================================================
+
+           ŞİFRENİ BURADAN DEĞİŞTİREBİLİRSİN.
+
+           ÖRNEK:
+
+           const ADMIN_PASSWORD = "YeniSifrem123!";
+
+        ===================================================== */
+
+        const ADMIN_PASSWORD = "Mehmet2026!";
+
+
+
+        /* =====================================================
+           ELEMENTLER
+        ===================================================== */
+
         const menuToggle =
             document.getElementById("menuToggle");
+
 
         const navMenu =
             document.getElementById("navMenu");
 
 
-        /* Hamburger'e basınca menüyü aç/kapat */
-
-        menuToggle.addEventListener("click", function () {
-
-            navMenu.classList.toggle("active");
-
-        });
+        const adminLogo =
+            document.getElementById("adminLogo");
 
 
-        /* Menüdeki linke basınca mobil menüyü kapat */
+        const loginModal =
+            document.getElementById("loginModal");
 
-        document.querySelectorAll(".nav-menu a")
+
+        const adminModal =
+            document.getElementById("adminModal");
+
+
+        const closeLogin =
+            document.getElementById("closeLogin");
+
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+
+        const adminPassword =
+            document.getElementById("adminPassword");
+
+
+        const loginError =
+            document.getElementById("loginError");
+
+
+        const showPassword =
+            document.getElementById("showPassword");
+
+
+        const logoutButton =
+            document.getElementById("logoutButton");
+
+
+        const announcementForm =
+            document.getElementById("announcementForm");
+
+
+        const announcementTitle =
+            document.getElementById("announcementTitle");
+
+
+        const announcementDate =
+            document.getElementById("announcementDate");
+
+
+        const announcementText =
+            document.getElementById("announcementText");
+
+
+        const saveAnnouncement =
+            document.getElementById("saveAnnouncement");
+
+
+        const cancelEdit =
+            document.getElementById("cancelEdit");
+
+
+        const formTitle =
+            document.getElementById("formTitle");
+
+
+        const announcementContainer =
+            document.getElementById("announcementContainer");
+
+
+        const adminAnnouncementList =
+            document.getElementById("adminAnnouncementList");
+
+
+        const announcementCount =
+            document.getElementById("announcementCount");
+
+
+
+        /* =====================================================
+           MOBİL MENÜ
+        ===================================================== */
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navMenu.classList.toggle("active");
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-menu a")
             .forEach(function (link) {
 
-                link.addEventListener("click", function () {
+                link.addEventListener(
+                    "click",
+                    function () {
 
-                    navMenu.classList.remove("active");
+                        navMenu.classList.remove("active");
 
-                });
+                    }
+                );
 
             });
+
+
+
+        /* =====================================================
+           LOGOYA 3 KEZ TIKLAMA
+        ===================================================== */
+
+        let logoClickCount = 0;
+
+        let logoClickTimer;
+
+
+        adminLogo.addEventListener(
+            "click",
+            function (event) {
+
+                logoClickCount++;
+
+
+                clearTimeout(
+                    logoClickTimer
+                );
+
+
+                logoClickTimer = setTimeout(
+                    function () {
+
+                        logoClickCount = 0;
+
+                    },
+                    700
+                );
+
+
+                if (logoClickCount === 3) {
+
+                    event.preventDefault();
+
+
+                    logoClickCount = 0;
+
+
+                    openLogin();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           LOGIN AÇ
+        ===================================================== */
+
+        function openLogin() {
+
+            loginModal.classList.add(
+                "active"
+            );
+
+
+            adminPassword.value = "";
+
+            loginError.textContent = "";
+
+
+            setTimeout(
+                function () {
+
+                    adminPassword.focus();
+
+                },
+                300
+            );
+
+        }
+
+
+
+        /* =====================================================
+           LOGIN KAPAT
+        ===================================================== */
+
+        closeLogin.addEventListener(
+            "click",
+            function () {
+
+                loginModal.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           MODAL DIŞINA TIKLAMA
+        ===================================================== */
+
+        loginModal.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    loginModal
+                ) {
+
+                    loginModal.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           ŞİFRE GÖSTER / GİZLE
+        ===================================================== */
+
+        showPassword.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    adminPassword.type ===
+                    "password"
+                ) {
+
+                    adminPassword.type =
+                        "text";
+
+
+                    showPassword.innerHTML =
+                        '<i class="fa-solid fa-eye-slash"></i>';
+
+                }
+
+                else {
+
+                    adminPassword.type =
+                        "password";
+
+
+                    showPassword.innerHTML =
+                        '<i class="fa-solid fa-eye"></i>';
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           LOGIN KONTROL
+        ===================================================== */
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const enteredPassword =
+                    adminPassword.value;
+
+
+                if (
+                    enteredPassword ===
+                    ADMIN_PASSWORD
+                ) {
+
+                    loginModal.classList.remove(
+                        "active"
+                    );
+
+
+                    adminModal.classList.add(
+                        "active"
+                    );
+
+
+                    adminPassword.value = "";
+
+                    loginError.textContent = "";
+
+
+                    renderAdminAnnouncements();
+
+                }
+
+                else {
+
+                    loginError.textContent =
+                        "Şifre hatalı. Lütfen tekrar deneyin.";
+
+
+                    adminPassword.value = "";
+
+
+                    adminPassword.focus();
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           ÇIKIŞ
+        ===================================================== */
+
+        logoutButton.addEventListener(
+            "click",
+            function () {
+
+                adminModal.classList.remove(
+                    "active"
+                );
+
+
+                resetAnnouncementForm();
+
+            }
+        );
+
+
+
+        /* =====================================================
+           DUYURU VERİLERİ
+        ===================================================== */
+
+        let announcements =
+            JSON.parse(
+                localStorage.getItem(
+                    "mehmetKaburakAnnouncements"
+                )
+            ) || [];
+
+
+        let editingId = null;
+
+
+
+        /* =====================================================
+           DUYURULARI ANA SAYFADA GÖSTER
+        ===================================================== */
+
+        function renderAnnouncements() {
+
+            announcementContainer.innerHTML = "";
+
+
+            if (
+                announcements.length === 0
+            ) {
+
+                announcementContainer.innerHTML = `
+
+                    <div class="no-announcements"
+                         style="grid-column:1/-1;">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <p>
+                            Henüz yayınlanmış bir duyuru bulunmamaktadır.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            announcements
+                .slice()
+                .reverse()
+                .forEach(
+                    function (announcement) {
+
+                        const card =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        card.className =
+                            "announcement";
+
+
+                        const formattedDate =
+                            formatDate(
+                                announcement.date
+                            );
+
+
+                        card.innerHTML = `
+
+                            <div class="announcement-icon">
+
+                                <i class="fa-solid fa-bullhorn"></i>
+
+                            </div>
+
+
+                            <h3>
+                                ${escapeHTML(
+                                    announcement.title
+                                )}
+                            </h3>
+
+
+                            <p>
+                                ${escapeHTML(
+                                    announcement.text
+                                )}
+                            </p>
+
+
+                            <span class="announcement-date">
+
+                                ${formattedDate}
+
+                            </span>
+
+                        `;
+
+
+                        announcementContainer
+                            .appendChild(card);
+
+                    }
+                );
+
+        }
+
+
+
+        /* =====================================================
+           YÖNETİCİ PANELİ DUYURULARI
+        ===================================================== */
+
+        function renderAdminAnnouncements() {
+
+            adminAnnouncementList.innerHTML = "";
+
+
+            announcementCount.textContent =
+                announcements.length +
+                (
+                    announcements.length === 1
+                        ? " duyuru"
+                        : " duyuru"
+                );
+
+
+            if (
+                announcements.length === 0
+            ) {
+
+                adminAnnouncementList.innerHTML = `
+
+                    <div class="no-announcements">
+
+                        <i class="fa-regular fa-folder-open"></i>
+
+                        <p>
+                            Henüz duyuru eklenmemiş.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            announcements
+                .slice()
+                .reverse()
+                .forEach(
+                    function (announcement) {
+
+                        const item =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        item.className =
+                            "admin-announcement";
+
+
+                        item.innerHTML = `
+
+                            <div class="admin-announcement-info">
+
+                                <h4>
+                                    ${escapeHTML(
+                                        announcement.title
+                                    )}
+                                </h4>
+
+                                <p>
+                                    ${escapeHTML(
+                                        announcement.text
+                                    )}
+                                </p>
+
+                            </div>
+
+
+                            <div class="admin-announcement-actions">
+
+
+                                <button
+                                    class="edit-btn"
+                                    onclick="editAnnouncement('${announcement.id}')"
+                                    title="Düzenle">
+
+                                    <i class="fa-solid fa-pen"></i>
+
+                                </button>
+
+
+                                <button
+                                    class="delete-btn"
+                                    onclick="deleteAnnouncement('${announcement.id}')"
+                                    title="Sil">
+
+                                    <i class="fa-solid fa-trash"></i>
+
+                                </button>
+
+
+                            </div>
+
+                        `;
+
+
+                        adminAnnouncementList
+                            .appendChild(item);
+
+                    }
+                );
+
+        }
+
+
+
+        /* =====================================================
+           DUYURU EKLE / GÜNCELLE
+        ===================================================== */
+
+        announcementForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const title =
+                    announcementTitle.value.trim();
+
+
+                const date =
+                    announcementDate.value;
+
+
+                const text =
+                    announcementText.value.trim();
+
+
+                if (
+                    !title ||
+                    !date ||
+                    !text
+                ) {
+
+                    return;
+
+                }
+
+
+                /* YENİ DUYURU */
+
+                if (
+                    editingId === null
+                ) {
+
+                    const newAnnouncement = {
+
+                        id:
+                            Date.now().toString(),
+
+                        title:
+                            title,
+
+                        date:
+                            date,
+
+                        text:
+                            text
+
+                    };
+
+
+                    announcements.push(
+                        newAnnouncement
+                    );
+
+                }
+
+
+                /* DÜZENLEME */
+
+                else {
+
+                    announcements =
+                        announcements.map(
+                            function (item) {
+
+                                if (
+                                    item.id ===
+                                    editingId
+                                ) {
+
+                                    return {
+
+                                        ...item,
+
+                                        title:
+                                            title,
+
+                                        date:
+                                            date,
+
+                                        text:
+                                            text
+
+                                    };
+
+                                }
+
+
+                                return item;
+
+                            }
+                        );
+
+                }
+
+
+                saveAnnouncements();
+
+
+                resetAnnouncementForm();
+
+
+                renderAdminAnnouncements();
+
+            }
+        );
+
+
+
+        /* =====================================================
+           DUYURU DÜZENLE
+        ===================================================== */
+
+        window.editAnnouncement =
+            function (id) {
+
+                const announcement =
+                    announcements.find(
+                        function (item) {
+
+                            return item.id === id;
+
+                        }
+                    );
+
+
+                if (!announcement) {
+                    return;
+                }
+
+
+                editingId = id;
+
+
+                announcementTitle.value =
+                    announcement.title;
+
+
+                announcementDate.value =
+                    announcement.date;
+
+
+                announcementText.value =
+                    announcement.text;
+
+
+                formTitle.textContent =
+                    "Duyuruyu Düzenle";
+
+
+                saveAnnouncement.innerHTML =
+                    '<i class="fa-solid fa-check"></i> Değişiklikleri Kaydet';
+
+
+                cancelEdit.style.display =
+                    "block";
+
+
+                document
+                    .querySelector(".admin-form")
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+            };
+
+
+
+        /* =====================================================
+           DUYURU SİL
+        ===================================================== */
+
+        window.deleteAnnouncement =
+            function (id) {
+
+                const announcement =
+                    announcements.find(
+                        function (item) {
+
+                            return item.id === id;
+
+                        }
+                    );
+
+
+                if (!announcement) {
+                    return;
+                }
+
+
+                const confirmed =
+                    confirm(
+                        '"' +
+                        announcement.title +
+                        '" başlıklı duyuru silinsin mi?'
+                    );
+
+
+                if (!confirmed) {
+                    return;
+                }
+
+
+                announcements =
+                    announcements.filter(
+                        function (item) {
+
+                            return item.id !== id;
+
+                        }
+                    );
+
+
+                saveAnnouncements();
+
+
+                renderAdminAnnouncements();
+
+            };
+
+
+
+        /* =====================================================
+           DÜZENLEMEYİ İPTAL ET
+        ===================================================== */
+
+        cancelEdit.addEventListener(
+            "click",
+            function () {
+
+                resetAnnouncementForm();
+
+            }
+        );
+
+
+
+        /* =====================================================
+           FORMU SIFIRLA
+        ===================================================== */
+
+        function resetAnnouncementForm() {
+
+            editingId = null;
+
+
+            announcementForm.reset();
+
+
+            formTitle.textContent =
+                "Yeni Duyuru Ekle";
+
+
+            saveAnnouncement.innerHTML =
+                '<i class="fa-solid fa-plus"></i> Duyuruyu Ekle';
+
+
+            cancelEdit.style.display =
+                "none";
+
+        }
+
+
+
+        /* =====================================================
+           LOCAL STORAGE'A KAYDET
+        ===================================================== */
+
+        function saveAnnouncements() {
+
+            localStorage.setItem(
+
+                "mehmetKaburakAnnouncements",
+
+                JSON.stringify(
+                    announcements
+                )
+
+            );
+
+
+            renderAnnouncements();
+
+        }
+
+
+
+        /* =====================================================
+           TARİH FORMATLA
+        ===================================================== */
+
+        function formatDate(dateString) {
+
+            if (!dateString) {
+                return "";
+            }
+
+
+            const date =
+                new Date(
+                    dateString + "T00:00:00"
+                );
+
+
+            return date.toLocaleDateString(
+                "tr-TR",
+                {
+                    day: "2-digit",
+                    month: "long",
+                    year: "numeric"
+                }
+            ).toUpperCase();
+
+        }
+
+
+
+        /* =====================================================
+           GÜVENLİ HTML METİN ÇIKIŞI
+        ===================================================== */
+
+        function escapeHTML(text) {
+
+            const div =
+                document.createElement("div");
+
+
+            div.textContent =
+                text;
+
+
+            return div.innerHTML;
+
+        }
+
+
+
+        /* =====================================================
+           ESC TUŞU İLE MODALLARI KAPAT
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    loginModal.classList.remove(
+                        "active"
+                    );
+
+
+                    adminModal.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* =====================================================
+           SAYFA AÇILDIĞINDA DUYURULARI GETİR
+        ===================================================== */
+
+        renderAnnouncements();
+
 
     </script>
 
